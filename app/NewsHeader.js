@@ -5,7 +5,7 @@
 //2.1 图片资源模块化，并输出
 //2.2 样式资源模块化。并输出
 import React from 'react';
-import imageLogo from './y18.jpg';
+import imageLogo from './y19.jpg';
 import './NewsHeader.css';
 export default class NewsHeader extends React.Component{
 	//getLogo()获取Logo并返回带logo的组件,{imageLogo}是模块化之后的资源文件，也就是图片路径，需要对应的模块化插件 url-loader

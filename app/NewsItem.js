@@ -5,6 +5,8 @@
 import React from 'react';
 import './NewsItem.css';
 import URL from 'url';
+import ImageGrayArrow from './grayarrow.gif';
+import Moment from 'moment';
 
 export default class NewsItem extends React.Component {
   getDomain() {
@@ -36,12 +38,35 @@ export default class NewsItem extends React.Component {
 		</div>
 	);
   }
+  getRank() { // 序号
+ return (
+     <div className="newsItem-rank">
+       {this.props.rank}.
+     </div>
+     );
+}
+
+getVote() { // 投票
+ return (
+     <div className="newsItem-vote">
+       <a href={'https://news.ycombinator.com/vote?for='+ this.props.item.id + '&dir=up&goto=news'}>
+         <img src={ImageGrayArrow} width="10" />
+       </a>
+     </div>
+     );
+}
   render() {
     return (
+    <div>
         <div className="newsItem">
-          this.getTitle();
-          getCommentLink()
+          {this.getRank()}
+          {this.getVote()}
         </div>
-        );
+        <div>
+			{this.getTitle()}
+			{this.getSubtext()}
+        </div>
+    </div>
+    );
   }
 }
